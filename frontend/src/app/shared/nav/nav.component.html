@@ -1,0 +1,8 @@
+<ul>
+  <li *ngIf="!userLoginOn">
+    <a routerLink="/login"><h2>Iniciar sesión</h2></a>
+  </li>
+  <li *ngIf="userLoginOn">
+    <a routerLink="/inicio"><h2>Cerrar sesión</h2></a>
+  </li>
+</ul>
