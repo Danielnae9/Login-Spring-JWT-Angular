@@ -2,3 +2,6 @@
   <h1 *ngIf="!userLoginOn">Usuario no autenticado</h1>
   <h1 *ngIf="userLoginOn">Usuario autenticado</h1>
 </div>
+<div *ngIf="userLoginOn">
+  <app-personal-details></app-personal-details>
+</div>

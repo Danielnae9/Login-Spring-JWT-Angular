@@ -1,0 +1,48 @@
+<div class="card">
+  <h2>Datos personales</h2>
+  <div class="card-info" *ngIf="!editMode">
+    <p>Nombre:  {{user?.firstname}}</p>
+    <p>Apellido:  {{user?.lastname}}</p>
+    <p>País:  {{user?.country}}</p>
+    <button *ngIf="userLoginOn && !editMode" class="btn" (click)="editMode=true">Editar Datos Personales</button>
+    </div>
+    
+    <form *ngIf="userLoginOn && editMode" [formGroup]="registerForm" >
+      <div>
+        <div class="input">
+          <label for="inputFirstName">Nombre</label>
+          <input type="text" formControlName="firstname" id="inputFirstName">
+        </div>
+        <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)" class="alert">
+          <div *ngIf="firstname.errors?.['required']">
+            El Nombre es requerido.
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="input">
+          <label for="inputLasttName">Apellido</label>
+          <input type="text" formControlName="lastname" id="inputLasttName">
+        </div>
+        <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="alert">
+          <div *ngIf="lastname.errors?.['required']">
+            El Apellido es requerido.
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="input">
+          <label for="inputCountry">País</label>
+          <input type="text" formControlName="country" id="inputCountry" >
+        </div>
+        <div *ngIf="country.invalid && (country.dirty || country.touched)" class="alert">
+          <div *ngIf="country.errors?.['required']">
+            El País es requerido.
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn" (click)="savePersonalDetailsData()">Guardar</button>
+      <button class="btn" (click)="editMode=false">Cancelar</button>
+    </form>
+    
+  </div>

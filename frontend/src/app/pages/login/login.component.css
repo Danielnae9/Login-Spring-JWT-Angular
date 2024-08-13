@@ -10,7 +10,7 @@ form{
 
 label{
   font-size: 1rem;
-  margin: 1.5rem 0 0.5rem 0;
+  margin: 1rem 0 0.5rem 0;
   font-weight: 600;
 }
 
@@ -44,6 +44,11 @@ h1{
   font-size: 3rem;
 }
 
+p{
+  margin-top: .5rem;
+  text-align: center;
+}
+
 .inicio-header{
   flex-direction: row;
   justify-content: center;
@@ -53,4 +58,16 @@ h1{
 .alert{
   display: block;
   color: #b82a28;
+}
+
+.login-link{
+  color: blue;
+}
+
+.login-link:hover{
+  color: rgb(0, 140, 255);
+}
+
+.login-text{
+  margin-top: 2rem;
 }

@@ -9,7 +9,11 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { PersonalDetailsComponent } from './pages/personal-details/personal-details.component';
+import { JwtInterceptorService } from './services/auth/jwt-interceptor.service';
+import { ErrorInterceptorService } from './services/auth/error-interceptor.service';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     DashboardComponent,
     LoginComponent,
-    NavComponent
+    NavComponent,
+    PersonalDetailsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +32,10 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass:JwtInterceptorService, multi:true},
+    {provide: HTTP_INTERCEPTORS, useClass:ErrorInterceptorService, multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

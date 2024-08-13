@@ -1,0 +1,72 @@
+
+<div class="inicio-header">
+  <img src="https://jwt.io/img/pic_logo.svg" alt="Logo JWT">
+  <h1>Regístrate</h1>
+</div>
+<form [formGroup]="registerForm">
+  <p class="alert">{{registerError}}</p>
+  <p class="success" *ngIf="userRegistered">Usuario registrado correctamente</p>
+  <div>
+    <label for="email">Email</label>
+    <input formControlName="username" type="email" id="email">
+    <div *ngIf="email.invalid && (email.dirty || email.touched)"
+      class="alert">
+      <div *ngIf="email.errors?.['required']">
+          El email es requerido
+      </div>
+      <div *ngIf="email.errors?.['email']">
+          El email debe tener un formato válido
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="password-label">
+      <label for="password">Contraseña</label>
+      <button (click)="togglePassword()">Mostrar</button>
+    </div>
+    <input formControlName="password" type="{{passwordType}}" id="password">
+    <div *ngIf="password.invalid && (password.dirty || password.touched)"
+      class="alert">
+      <div *ngIf="password.errors?.['required']">
+          La contraseña es requerida
+      </div>
+      <div *ngIf="password.errors?.['minlength']">
+        La contraseña debe tener almenos 8 caracteres
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="firstname">Nombre</label>
+    <input formControlName="firstname" type="text" id="firstname">
+    <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)"
+      class="alert">
+      <div *ngIf="firstname.errors?.['required']">
+          El nombre es requerido
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="lastname">Apellido</label>
+    <input formControlName="lastname" type="text" id="lastname">
+    <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)"
+      class="alert">
+      <div *ngIf="lastname.errors?.['required']">
+          El apellido es requerido
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="country">País</label>
+    <input formControlName="country" type="text" id="country">
+    <div *ngIf="country.invalid && (country.dirty || country.touched)"
+      class="alert">
+      <div *ngIf="country.errors?.['required']">
+          El país es requerido
+      </div>
+    </div>
+  </div>
+  <div>
+    <button type="submit" (click)="signin()">Regístrate</button>
+  </div>
+</form>
+<p class="login-text">¿Ya tienes cuenta? Inicia sesión <a routerLink="/login" class="login-link">aquí</a></p>

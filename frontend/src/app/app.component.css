@@ -5,4 +5,26 @@
   align-items: center;
   min-height: 100%;
   padding: 3rem 0;
+  margin: 2rem;
+}
+
+app-header{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  padding: 0 2rem;
+  height: 8rem;
+  color: whitesmoke;
+}
+
+app-footer{
+  padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(11, 11, 18);
+  height: 12rem;
+  color: whitesmoke;
 }

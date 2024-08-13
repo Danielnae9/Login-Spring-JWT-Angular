@@ -1,0 +1,99 @@
+div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form{
+  padding: 0 4rem;
+}
+
+label{
+  font-size: 1rem;
+  margin: 1rem 0 0.5rem 0;
+  font-weight: 600;
+}
+
+input{
+  width: 100%;
+ max-width: 40rem;
+  margin: .5rem 3rem;
+  height: 2rem;
+  border-radius: 5px;
+  padding: 0 .5rem;
+}
+
+input:focus{
+  box-shadow: 0 0 0 5px rgba(59, 131, 239, 0.695);
+}
+
+button{
+  margin-top: 1rem;
+  width: 8rem;
+  background-color: rgb(34, 46, 184);
+  color: whitesmoke;
+  font-weight: 600;
+  height: 3rem;
+  border: none;
+  border-radius: 30px;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+h1{
+  text-align: center;
+  margin: 1rem;
+  font-size: 3rem;
+}
+
+p{
+  margin-top: .5rem;
+  text-align: center;
+}
+
+.inicio-header{
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+.alert{
+  display: block;
+  color: #b82a28;
+}
+
+.login-link{
+  color: blue;
+}
+
+.login-link:hover{
+  color: rgb(0, 140, 255);
+}
+
+.login-text{
+  margin-top: 2rem;
+}
+
+.success{
+  margin-top: .5rem;
+  color: green;
+}
+
+.password-label{
+  display: flex;
+  flex-direction: row;
+  margin-top: 0;
+}
+
+.password-label>label{
+  padding-top: .6rem;
+}
+
+.password-label>button{
+  width: 5rem;
+  height: 2rem;
+  margin-left: 3rem;
+  font-size: .8rem;
+}

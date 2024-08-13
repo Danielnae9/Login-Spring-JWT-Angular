@@ -4,9 +4,10 @@
   <h1>Inicia sesión</h1>
 </div>
 <form [formGroup]="loginForm">
+  <p class="alert">{{loginError}}</p>
   <div>
     <label for="email">Email</label>
-    <input formControlName="email" type="email" id="email">
+    <input formControlName="username" type="email" id="email">
     <div *ngIf="email.invalid && (email.dirty || email.touched)"
       class="alert">
       <div *ngIf="email.errors?.['required']">
@@ -28,6 +29,7 @@
     </div>
   </div>
   <div>
-    <button type="submit" (click)="login()">Iniciar sesión</button>
+    <button type="submit" (click)="login()">Inicia sesión</button>
   </div>
 </form>
+<p class="login-text">¿No tienes cuenta? Regístrate <a routerLink="/register" class="login-link">aquí</a></p>
